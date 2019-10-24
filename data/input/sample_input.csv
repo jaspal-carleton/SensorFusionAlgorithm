@@ -1,0 +1,5 @@
+time_24hr,sensor_name,value
+13:20,sensor1,10
+13:20,sensor2,20
+13:50,sensor1,30
+13:50,sensor2,30.5
