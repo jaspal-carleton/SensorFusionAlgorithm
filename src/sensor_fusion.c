@@ -213,8 +213,8 @@ int compute_contrib_rate_count(double *contribution_rate,
  * \return Failure: NULL
  */
 double **compute_principal_component(struct support_degree_matrix *spd,
-                                        double **eigen_vector,
-                                        int contrib_rate_count) {
+                                     double **eigen_vector,
+                                     int contrib_rate_count) {
     if ((spd->sensor_count == 0) || (contrib_rate_count == 0) || (spd->sd_matrix == NULL) || (eigen_vector == NULL)) {
         printf("ERROR: Invalid param passed at %s\n", __func__);
         return NULL;
@@ -269,9 +269,9 @@ double **compute_principal_component(struct support_degree_matrix *spd,
  * \return Failure: NULL
  */
 double *compute_integrated_support_degree(double **principle_components,
-                                                   double *contribution_rate,
-                                                   int contrib_rate_count,
-                                                   int sensor_count) {
+                                          double *contribution_rate,
+                                          int contrib_rate_count,
+                                          int sensor_count) {
     if ((sensor_count == 0) || (contrib_rate_count == 0) || (principle_components == NULL) || (contribution_rate == NULL)) {
         printf("ERROR: Invalid param passed at %s\n", __func__);
         return NULL;
