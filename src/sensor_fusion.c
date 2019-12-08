@@ -59,6 +59,7 @@ struct eigen_value_vector *compute_eigen(struct support_degree_matrix *spd);
 struct support_degree_matrix *compute_support_degree_matrix(float *sensor_readings) {
     struct support_degree_matrix *spd;
     spd = (struct support_degree_matrix *)malloc(sizeof(struct support_degree_matrix));
+    // count the number of sensor readings
     int length = sizeof(sensor_readings) / sizeof(sensor_readings[0]);
     spd->sensor_count = length;
     double **arrptr = (double **)malloc(length * sizeof(double *));
@@ -66,11 +67,13 @@ struct support_degree_matrix *compute_support_degree_matrix(float *sensor_readin
     for (int i = 0; i < length; i++) {
         arrptr[i] = (double *)malloc(length * sizeof(double));
     }
+    // allocate memory space for support degree matrix structure
     spd->sd_matrix = (double *)malloc(sizeof(double) * length * length);
     if (arrptr == NULL || spd == NULL || spd->sd_matrix == NULL) {
         printf("ERROR: Failed to allocate memory at %s\n", __func__);
         return NULL;
     }
+    // compute support degree matrix
     for (int i = 0; i < length; i++) {
         for (int j = 0; j < length; j++) {
             arrptr[i][j] = exp(-1 * fabs(values[i] - values[j]));
@@ -78,7 +81,7 @@ struct support_degree_matrix *compute_support_degree_matrix(float *sensor_readin
             count++;
         }
     }
-    printf("INFO: Compute support degree matrix\n");
+    printf("INFO: Computed support degree matrix\n");
     for (int i = 0; i < length * length; i++) {
         printf("DEBUG: Value => %f\n", spd->sd_matrix[i]);
     }
@@ -100,6 +103,7 @@ struct eigen_value_vector *compute_eigen(struct support_degree_matrix *spd) {
     }
     int length = spd->sensor_count;
     struct eigen_value_vector *eigen;
+    // allocation memory space for eigen value vector structure
     eigen = (struct eigen_value_vector *)malloc(sizeof(struct eigen_value_vector));
     eigen->eigen_value = (double *)malloc(sizeof(double) * length);
     eigen->eigen_vector = (double **)malloc(length * sizeof(double *));
@@ -111,6 +115,7 @@ struct eigen_value_vector *compute_eigen(struct support_degree_matrix *spd) {
         return NULL;
     }
     //Refer: https://www.gnu.org/software/gsl/doc/html/eigen.html
+    // compute eigen values
     gsl_matrix_view m = gsl_matrix_view_array(spd->sd_matrix, length, length);
     gsl_vector *eval = gsl_vector_alloc(length);
     gsl_matrix *evec = gsl_matrix_alloc(length, length);
