@@ -13,43 +13,6 @@
 #include "sensor_fusion.h"
 
 /**
- * \brief Structure for storing support degree matrix
- * \details For the given number of sensors the structure will store support degree matrix
- */
-struct support_degree_matrix {
-    int sensor_count;
-    double *sd_matrix;
-};
-
-/**
- * \brief Structure for storing eigen value and eigen vector
- * \details For a given support degree matrix of
- * sensors the corresponding eigen values and vectors are stored in structure
- */
-struct eigen_value_vector {
-    double *eigen_value;
-    double **eigen_vector;
-};
-
-/**
- * \brief Structure to store computed support degree matrix
- * \details Structure pointer for calculating support degree matrix
- * \param[in] sensor_readings array of sensor readings
- * \return Success: pointer to the structure support_degree_matrix
- * \return Failure: NULL
- */
-struct support_degree_matrix *compute_support_degree_matrix(float *sensor_readings);
-
-/**
- * \brief Structure to store computed eigen value and eigen vector
- * \details Structure pointer for calculating eigen value and eigen vector
- * \param[in] support_degree_matrix pointer to structure support degree matrix
- * \return Success: pointer to structure eigen_value_vector
- * \return Failure: NULL
- */
-struct eigen_value_vector *compute_eigen(struct support_degree_matrix *spd);
-
-/**
  * \brief Structure pointer for computed support degree matrix
  * \details Structure pointer for calculating support degree matrix
  * \param[in] sensor_readings array of sensor readings
@@ -76,7 +39,7 @@ struct support_degree_matrix *compute_support_degree_matrix(float *sensor_readin
     // compute support degree matrix
     for (int i = 0; i < length; i++) {
         for (int j = 0; j < length; j++) {
-            arrptr[i][j] = exp(-1 * fabs(values[i] - values[j]));
+            arrptr[i][j] = exp(-1 * fabs(sensor_readings[i] - sensor_readings[j]));
             spd->sd_matrix[count] = arrptr[i][j];
             count++;
         }
@@ -308,6 +271,7 @@ double *compute_integrated_support_degree(double **principle_components,
 int eliminate_incorrect_data(double *integrated_support_degree_matrix,
                              double fault_tolerance_threshold,
                              int sensor_count) {
+    int i;
     double mean = 0;
     double sum = 0;
     double *arr = integrated_support_degree_matrix;
@@ -315,11 +279,11 @@ int eliminate_incorrect_data(double *integrated_support_degree_matrix,
         printf("ERROR: Invalid param passed at %s\n", __func__);
         return -1;
     }
-    for (int i = 0; i < sensor_count; i++) {
+    for (i = 0; i < sensor_count; i++) {
         sum += arr[i];
     }
     mean = sum / (i + 1);
-    for (int i = 0; i < sensor_count; i++) {
+    for (i = 0; i < sensor_count; i++) {
         if (fabs(arr[i]) < fabs(fault_tolerance_threshold * mean)) {
             arr[i] = 0;
         }
