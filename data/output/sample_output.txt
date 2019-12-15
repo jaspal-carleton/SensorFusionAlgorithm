@@ -1,0 +1,104 @@
+CSV File stoted as a 2D array in csv[][3],
+1st Columnis time stamp, 2nd column is Sensor,3rd Column is Sensor reading:
+1.200000 |1.000000 |1.100000 |
+1.200000 |2.000000 |1.200000 |
+1.300000 |1.000000 |1.300000 |
+1.300000 |2.000000 |1.400000 |
+1.300000 |3.000000 |1.500000 |
+1.350000 |1.000000 |1.600000 |
+1.350000 |2.000000 |1.700000 |
+1.350000 |3.000000 |1.800000 |
+1.350000 |4.000000 |1.900000 |
+1.450000 |1.000000 |2.000000 |
+1.450000 |2.000000 |2.100000 |
+1.500000 |1.000000 |2.200000 |
+1.500000 |2.000000 |2.300000 |
+1.500000 |3.000000 |2.400000 |
+1.500000 |4.000000 |2.500000 |
+1.500000 |5.000000 |2.600000 |
+1.500000 |6.000000 |2.700000 |
+2.000000 |1.000000 |2.800000 |
+2.000000 |2.000000 |2.900000 |
+2.000000 |3.000000 |3.000000 |
+2.100000 |1.000000 |3.100000 |
+2.100000 |2.000000 |3.200000 |
+2.100000 |3.000000 |3.300000 |
+2.100000 |4.000000 |3.400000 |
+2.100000 |5.000000 |3.500000 |
+2.100000 |6.000000 |3.600000 |
+2.200000 |1.000000 |3.700000 |
+2.200000 |2.000000 |3.800000 |
+2.200000 |3.000000 |3.900000 |
+2.200000 |4.000000 |4.000000 |
+2.200000 |5.000000 |4.100000 |
+2.300000 |1.000000 |4.200000 |
+2.400000 |1.000000 |4.300000 |
+2.400000 |2.000000 |4.400000 |
+2.400000 |3.000000 |4.500000 |
+2.400000 |4.000000 |4.600000 |
+2.400000 |5.000000 |4.700000 |
+2.400000 |6.000000 |4.800000 |
+2.400000 |7.000000 |4.900000 |
+2.400000 |8.000000 |5.000000 |
+2.400000 |9.000000 |5.100000 |
+
+Sensor readings for timestamp0 {1.200000} stored in sr[0][]array in row 0 (ranging from 0 to time stamp1 counter sr_c[0]) is
+1.100000
+1.200000
+
+Sensor readings for timestamp1 {1.300000} stored in sr[1][]array in row 1 (ranging from 0 to time stamp2 counter sr_c[1]) is
+1.300000
+1.400000
+1.500000
+
+Sensor readings for timestamp2 {1.350000} stored in sr[2][]array in row 2 (ranging from 0 to time stamp3 counter sr_c[2]) is
+1.600000
+1.700000
+1.800000
+1.900000
+
+Sensor readings for timestamp3 {1.450000} stored in sr[3][]array in row 3 (ranging from 0 to time stamp4 counter sr_c[3]) is
+2.000000
+2.100000
+
+Sensor readings for timestamp4 {1.500000} stored in sr[4][]array in row 4 (ranging from 0 to time stamp5 counter sr_c[4]) is
+2.200000
+2.300000
+2.400000
+2.500000
+2.600000
+2.700000
+
+Sensor readings for timestamp5 {2.000000} stored in sr[5][]array in row 5 (ranging from 0 to time stamp6 counter sr_c[5]) is
+2.800000
+2.900000
+3.000000
+
+Sensor readings for timestamp6 {2.100000} stored in sr[6][]array in row 6 (ranging from 0 to time stamp7 counter sr_c[6]) is
+3.100000
+3.200000
+3.300000
+3.400000
+3.500000
+3.600000
+
+Sensor readings for timestamp7 {2.200000} stored in sr[7][]array in row 7 (ranging from 0 to time stamp8 counter sr_c[7]) is
+3.700000
+3.800000
+3.900000
+4.000000
+4.100000
+
+Sensor readings for timestamp8 {2.300000} stored in sr[8][]array in row 8 (ranging from 0 to time stamp9 counter sr_c[8]) is
+4.200000
+
+Sensor readings for timestamp9 {2.400000} stored in sr[9][]array in row 9 (ranging from 0 to time stamp10 counter sr_c[9]) is
+4.300000
+4.400000
+4.500000
+4.600000
+4.700000
+4.800000
+4.900000
+5.000000
+5.100000
