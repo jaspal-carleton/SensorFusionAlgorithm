@@ -34,7 +34,7 @@ struct eigen_value_vector {
  * \return Success: pointer to the structure support_degree_matrix
  * \return Failure: NULL
  */
-struct support_degree_matrix *compute_support_degree_matrix(float *sensor_readings);
+struct support_degree_matrix *compute_support_degree_matrix(double *sensor_readings);
 
 /**
  * \brief Structure to store computed eigen value and eigen vector

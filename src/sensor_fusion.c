@@ -20,7 +20,7 @@
  * \return Success: pointer to the structure support_degree_matrix
  * \return Failure: NULL
  */
-struct support_degree_matrix *compute_support_degree_matrix(float *sensor_readings) {
+struct support_degree_matrix *compute_support_degree_matrix(double *sensor_readings) {
     struct support_degree_matrix *spd;
     spd = (struct support_degree_matrix *)malloc(sizeof(struct support_degree_matrix));
     // count the number of sensor readings
@@ -45,7 +45,7 @@ struct support_degree_matrix *compute_support_degree_matrix(float *sensor_readin
             count++;
         }
     }
-    printf("INFO: Computed support degree matrix\n");
+    printf("INFO : Computed support degree matrix\n");
     for (int i = 0; i < length * length; i++) {
         printf("DEBUG: Value => %f\n", spd->sd_matrix[i]);
     }
@@ -132,7 +132,7 @@ double *compute_contribution_rate(struct eigen_value_vector *eigen,
     for (int i = 0; i < sensor_count; i++) {
         sum += eigen->eigen_value[i];
     }
-    printf("INFO: Compute contribution rate\n");
+    printf("INFO : Compute contribution rate\n");
     for (int j = 0; j < sensor_count; j++) {
         contribution_rate[j] = eigen->eigen_value[j] / sum;
         printf("DEBUG: Rate => %g\n", contribution_rate[j]);
@@ -199,7 +199,7 @@ double **compute_principal_component(struct support_degree_matrix *spd,
         printf("ERROR: Failed to allocate memory at %s\n", __func__);
         return NULL;
     }
-    printf("INFO: Compute support degree matrix\n");
+    printf("INFO : Compute support degree matrix\n");
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
             arrptr[i][j] = spd->sd_matrix[count];
