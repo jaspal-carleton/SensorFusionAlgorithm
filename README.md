@@ -131,11 +131,12 @@ Step 2 : Clean residual files
 ```
 make clean
 ```
-Step 3 : Build the project
+Step 3 : Build the project (Ignore warnings if any)
 
 ```
 make
 ```
+
 Step 4 : Navigate to bin folder
 ```
 cd bin
