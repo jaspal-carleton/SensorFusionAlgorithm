@@ -102,11 +102,16 @@ git clone https://github.com/jaspal-carleton/SensorFusionAlgorithm.git
 ```
 cd SensorFusionAlgorithm
 ```
-6. Install GSL Environment setup by issuing below command 
+7. Provide permissions to run env_setup script 
+```
+chmod 777 env_setup.sh
+```
+
+8. Install GSL Environment setup by issuing below command 
 ```
 ./env_setup.sh
 ```
-7. Set the newly installed GSL Library as a path variable by issuing below command 
+9. Set the newly installed GSL Library as a path variable by issuing below command 
 ```
 source ~/.bashrc
 ```
@@ -120,20 +125,23 @@ Note: Please ensure that all pre-requsisted have been met.
 If you are using Non Linux machine, Please ensure to meet all the pre requsities mentioned above 
 Ensure to install make, cmake, wget packages in Cygwin to run the make commands
 
-Step1 : Open a terminal with make access and navigate to the root  folder of repository 
+Step 1 : Open a terminal with make access and navigate to the root  folder of repository 
 
-Step2 : Clean residual files
+Step 2 : Clean residual files
 ```
 make clean
 ```
-Step2 : Build the project
+Step 3 : Build the project
 
 ```
 make
 ```
-Step 3 : Navigate to bin folder
+Step 4 : Navigate to bin folder
+```
+cd bin
+```
 
-Step 4 : run the build main file by issuing below command 
+Step 5 : run the build main file by issuing below command 
 ```
 ./main
 ```
