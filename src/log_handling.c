@@ -5,6 +5,8 @@
  * \date 2019-12-05
  */
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include "log_handling.h"
 
 /**
