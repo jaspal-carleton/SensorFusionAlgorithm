@@ -25,9 +25,6 @@ Carleton Univresity, Ottawa, ON , Canada
 
 ### Folder Structure of the repository
 
-![Folder Structure](/include/Folderstructure.png)
-
-
 
 ### Pre-Requisites to run the software
 
