@@ -53,7 +53,6 @@ int main(int argc, char *argv[]) {
         char *temp_dir2 = dirname(temp_dir1);
         proj_abs_path = dirname(temp_dir2);
         printf("DEBUG: Absolute path => %s\n", proj_abs_path);
-        free(temp_dir1);
     }
     
     // get current timestamp
@@ -171,6 +170,7 @@ int main(int argc, char *argv[]) {
     // free malloc space
     free(input_csv);
     free(output_csv);
+	free(temp_dir1);
   
     // close log & csv out file handle
     fclose(fp);
