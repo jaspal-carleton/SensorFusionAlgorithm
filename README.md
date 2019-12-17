@@ -25,6 +25,45 @@ Carleton Univresity, Ottawa, ON , Canada
 
 ### Folder Structure of the repository
 
+│   .gitignore
+│   CHANGELOG.md
+│   env_setup.sh
+│   LICENSE.md
+│   makefile
+│   README.md
+│
+├───data
+│   ├───input
+│   │       input.csv
+│   │
+│   └───output
+│           output.csv
+│
+├───doc
+│       coding_conventions.pdf
+│       developer_manual.pdf
+│       proposed_design_document.pdf
+│       user_manual.pdf
+│
+├───include
+│       log_handling.h
+│       sensor_fusion.h
+│
+├───logs
+│       samplelog.txt
+│
+├───src
+│       log_handling.c
+│       main.c
+│       sensor_fusion.c
+│
+└───test
+    ├───data
+    │       sample.csv
+    │
+    └───src
+            main.c
+
 
 ### Pre-Requisites to run the software
 
