@@ -148,11 +148,30 @@ Step 5 : run the build main file by issuing below command
 ```
 Software exceutes and displays fused outputs on the terminal screen
 
-Step 6 : For testing the various sensor APIs issue below command 
+### Instructions to perform testing of the functions
+
+Step 1 : Open a terminal with make access and navigate to the root  folder of repository 
+
+Step 2 : Clean residual files
+```
+make clean
+```
+Step 3 : Build the project (Ignore warnings if any)
+
+```
+make
+```
+
+Step 4 : Navigate to bin folder
+```
+cd bin
+
+Step 5 : For testing the various sensor APIs issue below command 
 ```
 ./main -t
 ```
-Software will exceute test cases and display the result on terminal or screen
+
+Test Cased will exceute and display the result on terminal or screen
 
 ### Output
 
@@ -166,18 +185,29 @@ Logs files captures log information for every execution and stores it at /logs f
 Input is stored in /data/input/input.csv
 To obtain fused output for any desired csv files, uplaod desired input csv files to /data/iput/ folder and name it as input.csv
 
-### Detailed end user documentation (WIP)
+### Logs
+
+Log files are generated for each execution and is stored on /logs folder
+
+### Manual testing Results
+
+12 manual test cases were performed on the software, relevant test file locations are described as below
+
+1. Summary of manual testing can be found on /test/data/manual_testing_summary.xlsx
+2. Results of all 12 manual test cases can be found on /test/data/manual_test_results.xlsx
+
+### Detailed end user documentation
 
 Detailed end user documentation can be found at /doc/user_manual.pdf
 
-### Detailed developer documentation  (WIP)
+### Detailed developer documentation
 
 Detailed developer  documentation can be found at /doc/developer_manual.pdf
 
-### Coding Convention documentation  (WIP)
+### Coding Convention documentation
 
 Detailed coding convention  documentation can be found at /doc/coding_convention.pdf
 
-### Proposed Software Design Documentation  (WIP)
+### Proposed Software Design Documentation
 
 Detailed coding convention  documentation can be found at /doc/proposed_design_document.pdf
