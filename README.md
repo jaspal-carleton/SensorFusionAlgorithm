@@ -131,7 +131,7 @@ cd bin
 Step 5 : For testing the various sensor APIs issue below command 
 ```
 ./main -t
-```
+
 
 Test Cased will exceute and display the result on terminal or screen
 
