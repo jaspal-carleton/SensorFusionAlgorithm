@@ -42,7 +42,7 @@ int main(int argc, char *argv[]) {
     char *proj_abs_path;
     FILE *fptr_log;
     FILE *fptr_csv_out;
-    int errnum = 0;
+    int err_num = 0;
     
     // get project absolute path
     char *temp_dir1 = realpath(argv[0], NULL);
@@ -65,7 +65,7 @@ int main(int argc, char *argv[]) {
     printf("DEBUG: Log Path => %s\n", log_path);
     fptr_log = fopen(log_path,"w");
     if(fptr_log == NULL) {
-      fprintf(stderr, "Error opening log file: %s\n", strerror( errnum ));
+      fprintf(stderr, "Error opening log file: %s\n", strerror( err_num ));
       exit(EXIT_FAILURE);
     }
     
@@ -84,7 +84,7 @@ int main(int argc, char *argv[]) {
     printf("DEBUG: Output CSV Path => %s\n", output_csv);
     fptr_csv_out = fopen(output_csv,"w");
     if(fptr_csv_out == NULL) {
-      fprintf(stderr, "Error opening output csv file: %s\n", strerror( errnum ));
+      fprintf(stderr, "Error opening output csv file: %s\n", strerror( err_num ));
       exit(EXIT_FAILURE);
     }
     

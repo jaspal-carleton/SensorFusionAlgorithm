@@ -12,20 +12,20 @@
  * \brief Structure for storing support degree matrix
  * \details For the given number of sensors the structure will store support degree matrix
  */
-struct support_degree_matrix {
+typedef struct support_degree_matrix {
     int sensor_count;
     double *sd_matrix;
-};
+} support_degree_matrix_t;
 
 /**
  * \brief Structure for storing eigen value and eigen vector
  * \details For a given support degree matrix of
  * sensors the corresponding eigen values and vectors are stored in structure
  */
-struct eigen_value_vector {
+typedef struct eigen_value_vector {
     double *eigen_value;
     double **eigen_vector;
-};
+}eigen_value_vector_t;
 
 /**
  * \brief Structure to store computed support degree matrix

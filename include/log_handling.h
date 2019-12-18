@@ -12,12 +12,12 @@
  * \brief Structure for storing log details
  * \details Store log info such as log file pointer, log path, and log name
  */
-struct log_info_t {
+typedef struct log_info_t {
     FILE *fptr;
     char *log_filename;
     char *log_basefolder;
     char *log_path;
-};
+}log_info_t;
 
 /**
  * \brief Initialize log info

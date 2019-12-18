@@ -45,7 +45,7 @@ struct support_degree_matrix *compute_support_degree_matrix(double *sensor_readi
             count++;
         }
     }
-    printf("INFO : Computed support degree matrix\n");
+    printf("INFO : Computed support degree matrix ");
     for (int i = 0; i < length * length; i++) {
         printf("DEBUG: Value => %f\n", spd->sd_matrix[i]);
     }
