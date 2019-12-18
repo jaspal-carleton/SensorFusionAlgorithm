@@ -66,10 +66,19 @@ Carleton Univresity, Ottawa, ON , Canada
 │   README.md
 ```
 
+### Input
+
+Input is stored in /data/input/input.csv
+To obtain fused output for any desired csv files, uplaod desired input csv files to /data/iput/ folder and name it as input.csv
+
+### Output
+
+Output will be displayed on the terminal upon execution of the build file.
+Apart from the terminal display, the output is also stored in a output folder /data/output/output.csv
 
 ### Pre-Requisites to run the software
 
-Platform compatibility : Linux Distributions Ubuntu 18.04, CentOS 7.4, MAC OS, Windows 10
+Platform compatibility : Linux Distributions Ubuntu 18.04, CentOS 7.4; MAC OS 10.14 Mojave; Windows 10.
 
 1. Git
 2. GNU packages (make, cmake)
@@ -127,29 +136,25 @@ make
 Step 4 : Navigate to bin folder
 ```
 cd bin
+```
 
 Step 5 : For testing the various sensor APIs issue below command 
+
 ```
 ./main -t
+```
+
+Test Cases will exceute and display the result on terminal or screen
 
 
-Test Cased will exceute and display the result on terminal or screen
+### Additional feature of the software
 
-### Output
-
-Output will be displayed on the terminal upon execution of the build file
-Apart from the terminal display, the output is also stored in a output folder /data/output/output.csv
-
-Logs files captures log information for every execution and stores it at /logs folder
-
-### Input
-
-Input is stored in /data/input/input.csv
-To obtain fused output for any desired csv files, uplaod desired input csv files to /data/iput/ folder and name it as input.csv
-
-### Logs
+Logging feature
 
 Log files are generated for each execution and is stored on /logs folder
+Log files are named after execution time stamp. 
+Expectation of Log files: All the execution related information will be stored in log information which includes input, output and execution time
+(In current release, log files with execution timetstamp is getting generated however due to some bugs, we are not able store any information into these log files)
 
 ### Manual testing Results
 
@@ -170,6 +175,6 @@ Detailed developer  documentation can be found at /doc/developer_manual.pdf
 
 Detailed coding convention  documentation can be found at /doc/coding_convention.pdf
 
-### Proposed Software Design Documentation
+### Proposed Software Design Documentation (Deliverable 1)
 
 Detailed coding convention  documentation can be found at /doc/proposed_design_document.pdf
