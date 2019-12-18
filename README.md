@@ -146,7 +146,13 @@ Step 5 : run the build main file by issuing below command
 ```
 ./main
 ```
-Software exceutes and displays fused outputs on the terinal screen
+Software exceutes and displays fused outputs on the terminal screen
+
+Step 6 : For testing the various sensor APIs issue below command 
+```
+./main -t
+```
+Software will exceute test cases and display the result on terminal or screen
 
 ### Output
 
