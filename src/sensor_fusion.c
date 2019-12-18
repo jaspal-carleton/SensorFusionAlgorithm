@@ -4,6 +4,7 @@
  * \version 1.0
  * \date 2019-12-01
  */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -13,52 +14,16 @@
 #include "sensor_fusion.h"
 
 /**
- * \brief Structure for storing support degree matrix
- * \details For the given number of sensors the structure will store support degree matrix
- */
-struct support_degree_matrix {
-    int sensor_count;
-    double *sd_matrix;
-};
-
-/**
- * \brief Structure for storing eigen value and eigen vector
- * \details For a given support degree matrix of
- * sensors the corresponding eigen values and vectors are stored in structure
- */
-struct eigen_value_vector {
-    double *eigen_value;
-    double **eigen_vector;
-};
-
-/**
- * \brief Structure to store computed support degree matrix
- * \details Structure pointer for calculating support degree matrix
- * \param[in] sensor_readings array of sensor readings
- * \return Success: pointer to the structure support_degree_matrix
- * \return Failure: NULL
- */
-struct support_degree_matrix *compute_support_degree_matrix(float *sensor_readings);
-
-/**
- * \brief Structure to store computed eigen value and eigen vector
- * \details Structure pointer for calculating eigen value and eigen vector
- * \param[in] support_degree_matrix pointer to structure support degree matrix
- * \return Success: pointer to structure eigen_value_vector
- * \return Failure: NULL
- */
-struct eigen_value_vector *compute_eigen(struct support_degree_matrix *spd);
-
-/**
  * \brief Structure pointer for computed support degree matrix
  * \details Structure pointer for calculating support degree matrix
  * \param[in] sensor_readings array of sensor readings
  * \return Success: pointer to the structure support_degree_matrix
  * \return Failure: NULL
  */
-struct support_degree_matrix *compute_support_degree_matrix(float *sensor_readings) {
+struct support_degree_matrix *compute_support_degree_matrix(double *sensor_readings) {
     struct support_degree_matrix *spd;
     spd = (struct support_degree_matrix *)malloc(sizeof(struct support_degree_matrix));
+    // count the number of sensor readings
     int length = sizeof(sensor_readings) / sizeof(sensor_readings[0]);
     spd->sensor_count = length;
     double **arrptr = (double **)malloc(length * sizeof(double *));
@@ -66,19 +31,21 @@ struct support_degree_matrix *compute_support_degree_matrix(float *sensor_readin
     for (int i = 0; i < length; i++) {
         arrptr[i] = (double *)malloc(length * sizeof(double));
     }
+    // allocate memory space for support degree matrix structure
     spd->sd_matrix = (double *)malloc(sizeof(double) * length * length);
     if (arrptr == NULL || spd == NULL || spd->sd_matrix == NULL) {
         printf("ERROR: Failed to allocate memory at %s\n", __func__);
         return NULL;
     }
+    // compute support degree matrix
     for (int i = 0; i < length; i++) {
         for (int j = 0; j < length; j++) {
-            arrptr[i][j] = exp(-1 * fabs(values[i] - values[j]));
+            arrptr[i][j] = exp(-1 * fabs(sensor_readings[i] - sensor_readings[j]));
             spd->sd_matrix[count] = arrptr[i][j];
             count++;
         }
     }
-    printf("INFO: Compute support degree matrix\n");
+    printf("INFO : Computed support degree matrix ");
     for (int i = 0; i < length * length; i++) {
         printf("DEBUG: Value => %f\n", spd->sd_matrix[i]);
     }
@@ -100,6 +67,7 @@ struct eigen_value_vector *compute_eigen(struct support_degree_matrix *spd) {
     }
     int length = spd->sensor_count;
     struct eigen_value_vector *eigen;
+    // allocation memory space for eigen value vector structure
     eigen = (struct eigen_value_vector *)malloc(sizeof(struct eigen_value_vector));
     eigen->eigen_value = (double *)malloc(sizeof(double) * length);
     eigen->eigen_vector = (double **)malloc(length * sizeof(double *));
@@ -111,6 +79,7 @@ struct eigen_value_vector *compute_eigen(struct support_degree_matrix *spd) {
         return NULL;
     }
     //Refer: https://www.gnu.org/software/gsl/doc/html/eigen.html
+    // compute eigen values
     gsl_matrix_view m = gsl_matrix_view_array(spd->sd_matrix, length, length);
     gsl_vector *eval = gsl_vector_alloc(length);
     gsl_matrix *evec = gsl_matrix_alloc(length, length);
@@ -163,7 +132,7 @@ double *compute_contribution_rate(struct eigen_value_vector *eigen,
     for (int i = 0; i < sensor_count; i++) {
         sum += eigen->eigen_value[i];
     }
-    printf("INFO: Compute contribution rate\n");
+    printf("INFO : Compute contribution rate\n");
     for (int j = 0; j < sensor_count; j++) {
         contribution_rate[j] = eigen->eigen_value[j] / sum;
         printf("DEBUG: Rate => %g\n", contribution_rate[j]);
@@ -230,7 +199,7 @@ double **compute_principal_component(struct support_degree_matrix *spd,
         printf("ERROR: Failed to allocate memory at %s\n", __func__);
         return NULL;
     }
-    printf("INFO: Compute support degree matrix\n");
+    printf("INFO : Compute support degree matrix\n");
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
             arrptr[i][j] = spd->sd_matrix[count];
@@ -303,6 +272,7 @@ double *compute_integrated_support_degree(double **principle_components,
 int eliminate_incorrect_data(double *integrated_support_degree_matrix,
                              double fault_tolerance_threshold,
                              int sensor_count) {
+    int i;
     double mean = 0;
     double sum = 0;
     double *arr = integrated_support_degree_matrix;
@@ -310,11 +280,11 @@ int eliminate_incorrect_data(double *integrated_support_degree_matrix,
         printf("ERROR: Invalid param passed at %s\n", __func__);
         return -1;
     }
-    for (int i = 0; i < sensor_count; i++) {
+    for (i = 0; i < sensor_count; i++) {
         sum += arr[i];
     }
     mean = sum / (i + 1);
-    for (int i = 0; i < sensor_count; i++) {
+    for (i = 0; i < sensor_count; i++) {
         if (fabs(arr[i]) < fabs(fault_tolerance_threshold * mean)) {
             arr[i] = 0;
         }

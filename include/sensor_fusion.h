@@ -4,8 +4,46 @@
  * \version 1.0
  * \date 2019-12-01
  */
+
 #ifndef SENSOR_FUSION_H
 #define SENSOR_FUSION_H
+
+/**
+ * \brief Structure for storing support degree matrix
+ * \details For the given number of sensors the structure will store support degree matrix
+ */
+typedef struct support_degree_matrix {
+    int sensor_count;
+    double *sd_matrix;
+} support_degree_matrix_t;
+
+/**
+ * \brief Structure for storing eigen value and eigen vector
+ * \details For a given support degree matrix of
+ * sensors the corresponding eigen values and vectors are stored in structure
+ */
+typedef struct eigen_value_vector {
+    double *eigen_value;
+    double **eigen_vector;
+}eigen_value_vector_t;
+
+/**
+ * \brief Structure to store computed support degree matrix
+ * \details Structure pointer for calculating support degree matrix
+ * \param[in] sensor_readings array of sensor readings
+ * \return Success: pointer to the structure support_degree_matrix
+ * \return Failure: NULL
+ */
+struct support_degree_matrix *compute_support_degree_matrix(double *sensor_readings);
+
+/**
+ * \brief Structure to store computed eigen value and eigen vector
+ * \details Structure pointer for calculating eigen value and eigen vector
+ * \param[in] support_degree_matrix pointer to structure support degree matrix
+ * \return Success: pointer to structure eigen_value_vector
+ * \return Failure: NULL
+ */
+struct eigen_value_vector *compute_eigen(struct support_degree_matrix *spd);
 
 /**
  * \brief Function to calculate the contribution rate of principal component
