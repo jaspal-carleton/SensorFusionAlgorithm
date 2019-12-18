@@ -24,9 +24,9 @@ LFLAGS   = -L$(GSL_LIB) -lgsl -lgslcblas -lm
 
 INC      := -I$(INCLUDE_DIR) -I$(GSL_INCLUDE) -I$(TEST_INCLUDE)
 CORE_SRC := $(wildcard $(SOURCE_DIR)/*.c)
-TEST_SRC := $(wildcard $(TEST_DIR)/*.c)
+TEST_SRC := $(wildcard $(TEST_SOURCE)/*.c)
 CORE_OBJ := $(CORE_SRC:$(SOURCE_DIR)/%.c=$(BUILD_DIR)/%.o)
-TEST_OBJ := $(TEST_SRC:$(TEST_DIR)/%.c=$(BUILD_DIR)/%.o)
+TEST_OBJ := $(TEST_SRC:$(TEST_SOURCE)/%.c=$(BUILD_DIR)/%.o)
 
 
 $(BINARY_DIR)/$(APP): $(CORE_OBJ) $(TEST_OBJ)
@@ -39,7 +39,7 @@ $(CORE_OBJ): $(BUILD_DIR)/%.o : $(SOURCE_DIR)/%.c
 	@$(CC) $(CFLAGS) $(INC) -c $< -o $@
 	@echo "Finished Compiling Module "$<" ..."
 
-$(TEST_OBJ): $(BUILD_DIR)/%.o : $(TEST_DIR)/%.c
+$(TEST_OBJ): $(BUILD_DIR)/%.o : $(TEST_SOURCE)/%.c
 	@$(CC) $(CFLAGS) $(INC) -c $< -o $@
 	@echo "Finished Compiling Module  "$<" ..."
 

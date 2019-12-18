@@ -16,6 +16,7 @@
 #include <time.h>
 #include "log_handling.h"
 #include "sensor_fusion.h"
+#include "test.h"
 
 #define BUF_LEN 255
 extern int errno ;
@@ -176,6 +177,26 @@ int main(int argc, char *argv[]) {
     fclose(fp);
     fclose(fptr_log);
     fclose(fptr_csv_out);
+    
+    // Testing APIs
+    int opt;
+    while ((opt = getopt(argc, argv, "t")) != -1) {
+        switch (opt) {
+            case 't':
+                // perform automated testing
+                printf("\n-----------------------------------\n");
+                printf("Starting Automated APIs Testing\n");
+                printf("-----------------------------------\n");
+                test_all();
+                printf("\n-----------------------------------\n");
+                printf("Finished Automated APIs Testing\n");
+                printf("-----------------------------------\n");
+                break;
+            default:
+                printf("Usage: ./bin/main [-t]\n");
+                break;
+        }
+    }
     
     return 0;
 } // End of main()
