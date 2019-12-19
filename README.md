@@ -171,7 +171,10 @@ Expectation of Log files: All the execution related information will be stored i
 
 ### Detailed end user documentation
 
-Detailed end user documentation can be found at /doc/user_manual.pdf
+For detailed end user documentation click link below
+```
+https://github.com/jaspal-carleton/SensorFusionAlgorithm/blob/master/doc/1.%20user_manual.pdf
+```
 
 ### Detailed developer documentation
 
