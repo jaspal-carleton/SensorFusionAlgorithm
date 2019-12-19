@@ -6,7 +6,7 @@ The purpose of the sensor fusion software is to calculate a single aggregate fus
 
 ### Disclaimer
 
-This software is a mere implementation of the research work presented in [1] and is not a reproduction of any sort. This project is soley meant for academic reasearch purpose only. As per authors best knowledge, no copyright violations were observed  
+This software is a mere implementation of the research work presented in [1] and is not a reproduction of any sort. This project is soley meant for academic reasearch purpose only. As per authors best knowledge, no copyright violations were observed.
 
 ### Authors
 
@@ -21,7 +21,7 @@ This software is a mere implementation of the research work presented in [1] and
 
 ### Organization
 
-Carleton Univresity, Ottawa, ON , Canada
+Carleton University, Ottawa, ON , CANADA
 
 ### Folder Structure of the repository
 
@@ -172,18 +172,20 @@ Expectation of Log files: All the execution related information will be stored i
 ### Detailed end user documentation
 
 For detailed end user documentation click link below
-```
-https://github.com/jaspal-carleton/SensorFusionAlgorithm/blob/master/doc/1.%20user_manual.pdf
-```
+https://github.com/jaspal-carleton/SensorFusionAlgorithm/blob/master/doc/1.%20user_manual.pdf <https://github.com/jaspal-carleton/SensorFusionAlgorithm/blob/master/doc/1.%20user_manual.pdf>
+
 
 ### Detailed developer documentation
 
-Detailed developer  documentation can be found at /doc/developer_manual.pdf
+For detailed developer documentation click link below
+https://github.com/jaspal-carleton/SensorFusionAlgorithm/blob/master/doc/2.%20developer_manual.pdf <https://github.com/jaspal-carleton/SensorFusionAlgorithm/blob/master/doc/2.%20developer_manual.pdf>
 
 ### Coding Convention documentation
 
-Detailed coding convention  documentation can be found at /doc/coding_convention.pdf
+For detailed coding convention documentation click link below
+https://github.com/jaspal-carleton/SensorFusionAlgorithm/blob/master/doc/3.%20coding_conventions.pdf <https://github.com/jaspal-carleton/SensorFusionAlgorithm/blob/master/doc/3.%20coding_conventions.pdf>
 
 ### Proposed Software Design Documentation (Deliverable 1)
 
-Detailed coding convention  documentation can be found at /doc/proposed_design_document.pdf
+For detailed coding convention documentation click link below
+https://github.com/jaspal-carleton/SensorFusionAlgorithm/blob/master/doc/4.%20proposed_design_document.pdf <https://github.com/jaspal-carleton/SensorFusionAlgorithm/blob/master/doc/4.%20proposed_design_document.pdf>
