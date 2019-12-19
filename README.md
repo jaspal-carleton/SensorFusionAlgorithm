@@ -172,20 +172,24 @@ Expectation of Log files: All the execution related information will be stored i
 ### Detailed end user documentation
 
 For detailed end user documentation click link below
-https://github.com/jaspal-carleton/SensorFusionAlgorithm/blob/master/doc/1.%20user_manual.pdf <https://github.com/jaspal-carleton/SensorFusionAlgorithm/blob/master/doc/1.%20user_manual.pdf>
+
+<https://github.com/jaspal-carleton/SensorFusionAlgorithm/blob/master/doc/1.%20user_manual.pdf>
 
 
 ### Detailed developer documentation
 
 For detailed developer documentation click link below
-https://github.com/jaspal-carleton/SensorFusionAlgorithm/blob/master/doc/2.%20developer_manual.pdf <https://github.com/jaspal-carleton/SensorFusionAlgorithm/blob/master/doc/2.%20developer_manual.pdf>
+
+<https://github.com/jaspal-carleton/SensorFusionAlgorithm/blob/master/doc/2.%20developer_manual.pdf>
 
 ### Coding Convention documentation
 
 For detailed coding convention documentation click link below
-https://github.com/jaspal-carleton/SensorFusionAlgorithm/blob/master/doc/3.%20coding_conventions.pdf <https://github.com/jaspal-carleton/SensorFusionAlgorithm/blob/master/doc/3.%20coding_conventions.pdf>
+
+<https://github.com/jaspal-carleton/SensorFusionAlgorithm/blob/master/doc/3.%20coding_conventions.pdf>
 
 ### Proposed Software Design Documentation (Deliverable 1)
 
 For detailed coding convention documentation click link below
-https://github.com/jaspal-carleton/SensorFusionAlgorithm/blob/master/doc/4.%20proposed_design_document.pdf <https://github.com/jaspal-carleton/SensorFusionAlgorithm/blob/master/doc/4.%20proposed_design_document.pdf>
+
+<https://github.com/jaspal-carleton/SensorFusionAlgorithm/blob/master/doc/4.%20proposed_design_document.pdf>
