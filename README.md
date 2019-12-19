@@ -42,10 +42,10 @@ Carleton Univresity, Ottawa, ON , Canada
 │           output.csv
 │
 ├───doc
-│       coding_conventions.pdf
-│       developer_manual.pdf
-│       proposed_design_document.pdf
-│       user_Manual.pdf
+│       1. user_manual.pdf
+│       2. developer_manual.pdf
+│       3. coding_conventions.pdf
+│       4. proposed_design_document.pdf
 │
 ├───include
 │       log_handling.h
